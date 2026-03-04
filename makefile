@@ -11,7 +11,7 @@ migrate-up:
 
 .PHONY: migrate-down
 migrate-down:
-	@migrate -path=$(MIGRATIONS_PATH) -database=$(DB_ADDR) down $(filter_out $@,$(MKAECMDGOALS))
+	@migrate -path=$(MIGRATIONS_PATH) -database=$(DB_ADDR) down $(filter-out $@,$(MAKECMDGOALS))
 
 # This catches any extra arguments (like posts_create) and tells Make to do nothing with them.
 %:
